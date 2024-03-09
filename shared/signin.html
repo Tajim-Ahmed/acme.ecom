@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>test form login </title>
+    <style>
+
+*{
+    margin: 0;padding: 0; overflow: hidden;
+}
+.input{
+    border-radius: 15px; 
+    background-color: black;
+     color: aqua;
+     height: 35px;
+     width: 250px;
+}
+.signin{
+    height: 100vh;
+    width: 100vw;
+    /* background-color: black; */
+   }
+   .btn{
+    border-radius: 30px;
+  background-color: black;
+  color: aqua;
+  height: 31px;
+  width: 150px;
+   }
+
+.head{
+    position: relative;
+  top: 32px;
+  left: 53px;
+  color: aqua;
+  border: 2px groove black;
+  background-color: black;
+  padding: 5px;
+}
+
+
+    </style>
+</head>
+<body>
+
+
+
+<div class="signin" id="signin">
+
+    <a href="#login" class="head">login</a>
+    <span > <center><img  src="pidgelogo-removebg-preview.png" height="150px" style="margin-top: 30px;" alt="t"> </center></span>
+
+    <center><h1  style=" font-style: initial; color: rgb(41, 108, 155);">SIGN IN </h1></center>
+    <hr><br>
+   <form action="signin.php" method="post"  onsubmit="return validate()">
+    <center><input class="input" name="username" type="text" required placeholder="enter username" ></center><br>
+   <center><input  class="input"  type="password" name="pass1" id="pass1" required placeholder="enter password"> </center><br>
+   <center><input  class="input"  type="password" name="pass2"  id="pass2" required  placeholder="Re-enter password"> </center><br>
+   <center> <select class="input" style="color: rgb(224, 220, 214);" name="usertype" id="usertype"><option value="vendor">vendor</option> <option value="customer">customer</option></select></center><br>
+   <center><button  class="btn" >submit</button></center></form>
+</div>
+<div class="signin" id="login">
+
+    <a href="#signin" class="head">signin</a>
+
+    <span > <center><img  src="pidgelogo-removebg-preview.png" height="150px" style="margin-top: 30px;" alt="t"> </center></span>
+
+    <center><h1  style=" font-style: initial; color: rgb(41, 108, 155);">LOG IN</h1></center>
+    <hr><br>
+   <!-- <center><input class="input" type="number" placeholder="enter mobile no" ></center><br> -->
+   <!-- <center> <input  class="input"  type="text" placeholder="enter OTP"></center><br> -->
+   <form action="login.php" method="post">
+   <center><input  class="input"  type="username" name="usernamel" required  placeholder="username"> </center><br>
+   <center><input  class="input"  type="password" name="passwordl" required placeholder="password"> </center><br>
+   <center><button  class="btn" >enter</button></center></form>
+</div>
+
+<script>
+    
+    p1 = document.getElementById("pass1");
+    p2 = document.getElementById("pass2");
+
+    function validate(){
+        if (p1.value==p2.value){
+                 return true;
+        }
+        else{
+            alert("password mismatch");
+            return false;
+        }
+    }
+    
+
+    
+
+</script>
+</body>
+</html>
